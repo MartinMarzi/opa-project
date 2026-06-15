@@ -1,11 +1,12 @@
 from fastapi import FastAPI
 
-SERVICE_NAME = "openai-compatible-yolo11-coco-detection-api"
+from yolo_openai_api.config import get_settings
+
 
 app = FastAPI(title="OpenAI-compatible YOLO11 COCO Detection API")
 
 
 @app.get("/health")
 def health() -> dict[str, str]:
-    return {"status": "ok", "service": SERVICE_NAME}
-
+    settings = get_settings()
+    return {"status": "ok", "service": settings.service_name}
