@@ -6,72 +6,37 @@ Project: **OpenAI-compatible YOLO11 COCO Detection API**
 
 ## Configuration principles
 
-All runtime configuration should come from environment variables.
+All runtime configuration comes from environment variables.
+
+`pydantic-settings` loads values from the process environment and an optional local `.env` file.
 
 No secrets should be hardcoded.
 
-A `.env.example` file should document required and optional settings using fake placeholder values.
+---
+
+## Environment variables
+
+| Variable | Default | Description |
+|---|---|---|
+| `YOLO_API_SERVICE_NAME` | `openai-compatible-yolo11-coco-detection-api` | Service name returned by `GET /health`. |
+| `YOLO_PUBLIC_MODEL_NAME` | `yolo11n-coco` | Public OpenAI-style model name. |
+| `YOLO_MODEL_FILE` | `yolo11n.pt` | Internal YOLO model file name. |
+| `YOLO_API_KEY` | `` | API key placeholder for later `/v1/*` authentication. |
+| `YOLO_MAX_IMAGE_BYTES` | `5000000` | Maximum decoded image size in bytes. |
+| `YOLO_DEFAULT_CONFIDENCE_THRESHOLD` | `0.25` | Default confidence threshold for later detection requests. |
+| `YOLO_MAX_DETECTIONS` | `100` | Maximum detections per image. |
 
 ---
 
-## Required environment variables
+## `.env.example`
 
-| Variable | Required | Example | Purpose |
-|---|---:|---|---|
-| `YOLO_API_KEY` | Yes | `change-me-local-dev-key` | Single Bearer API key for `/v1/*` endpoints. |
-
----
-
-## Recommended environment variables
-
-| Variable | Required | Default | Purpose |
-|---|---:|---|---|
-| `YOLO_MODEL_NAME` | No | `yolo11n-coco` | Public API model name. |
-| `YOLO_MODEL_PATH` | No | `yolo11n.pt` | Model file/path to load. |
-| `YOLO_DEVICE` | No | `cpu` | Inference device. Must default to CPU. |
-| `YOLO_CONFIDENCE` | No | `0.25` | Confidence threshold. |
-| `YOLO_MAX_DETECTIONS` | No | `100` | Maximum detections per image. |
-| `YOLO_MAX_IMAGE_MB` | No | `10` | Maximum decoded/uploaded image size. |
-| `YOLO_MAX_IMAGE_PIXELS` | No | `4194304` | Maximum image pixel count, e.g. 2048x2048. |
-| `YOLO_LOG_LEVEL` | No | `INFO` | Logging level. |
-| `YOLO_ENABLE_REAL_MODEL_TESTS` | No | `false` | Allows slower integration tests using real YOLO model. |
+The repository includes safe placeholder values in `.env.example`.
+Copy that file to `.env` for local development.
 
 ---
 
-## `.env.example` target content
+## Authentication note
 
-When the repository scaffold is created, include something like:
+`YOLO_API_KEY` is present in configuration now, but authentication is not implemented yet.
+It will be enforced in a later work order.
 
-```env
-YOLO_API_KEY=change-me-local-dev-key
-YOLO_MODEL_NAME=yolo11n-coco
-YOLO_MODEL_PATH=yolo11n.pt
-YOLO_DEVICE=cpu
-YOLO_CONFIDENCE=0.25
-YOLO_MAX_DETECTIONS=100
-YOLO_MAX_IMAGE_MB=10
-YOLO_MAX_IMAGE_PIXELS=4194304
-YOLO_LOG_LEVEL=INFO
-YOLO_ENABLE_REAL_MODEL_TESTS=false
-```
-
----
-
-## CPU-only configuration rule
-
-`YOLO_DEVICE` must default to `cpu`.
-
-Do not require CUDA or GPU-specific configuration for MVP or RC1.
-
----
-
-## Configuration tests
-
-Tests should verify:
-
-- missing API key is handled clearly at startup or request time;
-- default model name is `yolo11n-coco`;
-- default model path is `yolo11n.pt`;
-- default device is `cpu`;
-- confidence and max detections parse correctly;
-- invalid numeric config fails clearly.
