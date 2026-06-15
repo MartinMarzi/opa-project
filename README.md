@@ -11,6 +11,12 @@ Copy `.env.example` to `.env` for local development.
 Authentication is enforced on `/v1/*` with `Authorization: Bearer <YOLO_API_KEY>`.
 OpenAI-shaped error responses are now part of the API foundation.
 `GET /health` is public; future `/v1/*` endpoints require `Authorization: Bearer <YOLO_API_KEY>`.
+`GET /v1/models` is implemented and currently lists only `yolo11n-coco`.
+
+```bash
+curl -H "Authorization: Bearer change-me-local-dev-key" \
+  http://localhost:8000/v1/models
+```
 
 Local test:
 

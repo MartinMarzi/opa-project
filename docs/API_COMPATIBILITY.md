@@ -27,8 +27,8 @@ Incorrect wording:
 
 | Endpoint | Status | Purpose |
 |---|---|---|
-| `GET /v1/models` | MVP | Return available model names such as `yolo11n-coco`. |
-| `POST /v1/chat/completions` | MVP | Accept OpenAI-style chat completion requests containing one image and return detections. |
+| `GET /v1/models` | Implemented | Return available model names such as `yolo11n-coco`. |
+| `POST /v1/chat/completions` | Not implemented | Accept OpenAI-style chat completion requests containing one image and return detections. |
 
 ---
 

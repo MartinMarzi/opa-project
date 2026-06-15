@@ -137,6 +137,12 @@ MVP response should include `yolo11n-coco`:
 }
 ```
 
+Implemented now:
+
+- `GET /v1/models` returns an OpenAI-shaped list response;
+- each model object includes `id`, `object`, `created`, `owned_by`, and `root`;
+- only one model is listed for now: `yolo11n-coco` with `root = "yolo11n.pt"`.
+
 ---
 
 ## `/v1/detections` native response
