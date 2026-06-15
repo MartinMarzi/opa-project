@@ -14,6 +14,10 @@ The MVP security goal is not enterprise identity management. The goal is a simpl
 
 ## Authentication
 
+The service uses a single API key loaded from environment configuration.
+
+`GET /health` is public.
+
 All `/v1/*` endpoints require:
 
 ```http
@@ -25,8 +29,9 @@ Rules:
 - API key is loaded from environment configuration.
 - API key must never be hardcoded.
 - API key must never be committed.
+- Missing server-side API key fails closed.
 - Missing or invalid key returns an OpenAI-shaped authentication error.
-- `GET /health` may be unauthenticated.
+- No user accounts, database, billing, or quota system are part of v1.
 
 ---
 

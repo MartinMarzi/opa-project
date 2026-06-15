@@ -26,7 +26,7 @@ Each work order should:
 | WO-001 | Completed | Repo scaffold | Create package layout, minimal FastAPI app, `/health`, pytest, ruff, README skeleton. |
 | WO-002 | Completed | Config system | Add environment-based settings and `.env.example`. |
 | WO-003 | Completed | OpenAI-shaped errors | Add error helper/handlers and tests. |
-| WO-004 | Planned | API key auth | Add Bearer API key auth and tests. |
+| WO-004 | Completed | API key auth | Add Bearer API key auth and tests. |
 | WO-005 | Planned | Model registry | Add `yolo11n-coco` registry and `/v1/models`. |
 | WO-006 | Planned | Detection schema | Add detection result Pydantic models. |
 | WO-007 | Planned | Image parser | Add Base64 data URL parser and validation. |
@@ -76,3 +76,4 @@ Use the `AGENTS.md` final report format.
 - WO-001 — Repo scaffold
 - WO-002 — Config system
 - WO-003 — OpenAI-shaped errors
+- WO-004 — API key auth

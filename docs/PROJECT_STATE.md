@@ -10,7 +10,7 @@ Last updated: 2026-06-15
 
 This repository is being initialized.
 
-The initial scaffold exists and exposes a minimal health endpoint.
+The initial scaffold exists, exposes a minimal health endpoint, and enforces API key auth on `/v1/*`.
 
 The initial strategic decisions are:
 
@@ -45,12 +45,12 @@ M1 is complete when the repository contains:
 - `GET /health`
 - configuration system
 - OpenAI-shaped error responses
+- single API key authentication for `/v1/*`
 
 ---
 
 ## Not implemented yet
 
-- single API key authentication
 - `/v1/models`
 - image parser
 - detection schema
@@ -81,7 +81,7 @@ M1 is complete when the repository contains:
 
 ## Next recommended work order
 
-Implement `WO-004` API key authentication.
+Implement `WO-005` Model registry and `/v1/models`.
 
 ---
 

@@ -11,6 +11,7 @@ This project provides a **selected OpenAI-compatible API subset** for image-base
 It is not a full OpenAI API replacement.
 
 OpenAI-shaped error responses are implemented as part of the compatibility foundation, but full OpenAI error compatibility is not claimed.
+Bearer API key authentication also follows the common OpenAI client pattern at the header level, but this is not a claim of full OpenAI API support.
 
 Correct wording:
 
@@ -52,6 +53,16 @@ Optional later:
 - `yolo11m-coco`
 
 Unsupported model names must return a clear OpenAI-shaped error.
+
+## Authentication compatibility
+
+The service follows the familiar OpenAI-style header pattern:
+
+```http
+Authorization: Bearer <YOLO_API_KEY>
+```
+
+That is compatibility at the auth/header level only. It does not imply full OpenAI endpoint support.
 
 ---
 

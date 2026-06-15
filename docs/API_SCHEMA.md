@@ -100,6 +100,7 @@ Implemented now:
 
 - unknown routes return HTTP 404 with `type = "not_found_error"` and `code = "not_found"`;
 - request validation errors return HTTP 422 with `type = "invalid_request_error"` and `code = "validation_error"`;
+- authentication errors use the same envelope with `type = "authentication_error"`;
 - reusable helper structure keeps `message`, `type`, `param`, and `code` in place for later endpoint-specific errors.
 
 Recommended error types:
@@ -108,6 +109,7 @@ Recommended error types:
 |---|---:|---|---|
 | Missing API key | 401 | `authentication_error` | `missing_api_key` |
 | Invalid API key | 401 | `authentication_error` | `invalid_api_key` |
+| Missing server config | 503 | `authentication_error` | `api_key_not_configured` |
 | Unsupported model | 400 | `invalid_request_error` | `model_not_found` |
 | Missing image | 400 | `invalid_request_error` | `missing_image` |
 | Invalid image | 400 | `invalid_request_error` | `invalid_image` |
