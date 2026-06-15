@@ -46,12 +46,13 @@ M1 is complete when the repository contains:
 - configuration system
 - OpenAI-shaped error responses
 - single API key authentication for `/v1/*`
+- model registry
+- `GET /v1/models`
 
 ---
 
 ## Not implemented yet
 
-- `/v1/models`
 - image parser
 - detection schema
 - mocked YOLO service
@@ -81,7 +82,7 @@ M1 is complete when the repository contains:
 
 ## Next recommended work order
 
-Implement `WO-005` Model registry and `/v1/models`.
+Implement `WO-006` Detection schema.
 
 ---
 

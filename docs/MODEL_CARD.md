@@ -30,6 +30,9 @@ Hardware target:
 CPU-only
 ```
 
+The model registry currently exposes only `yolo11n-coco` backed by `yolo11n.pt`.
+Actual YOLO inference is not implemented until a later work order.
+
 ---
 
 ## Optional later models
