@@ -44,13 +44,13 @@ M1 is complete when the repository contains:
 - FastAPI application scaffold
 - `GET /health`
 - configuration system
+- OpenAI-shaped error responses
 
 ---
 
 ## Not implemented yet
 
 - single API key authentication
-- OpenAI-shaped error responses
 - `/v1/models`
 - image parser
 - detection schema
@@ -81,7 +81,7 @@ M1 is complete when the repository contains:
 
 ## Next recommended work order
 
-Implement `WO-003` OpenAI-shaped error format.
+Implement `WO-004` API key authentication.
 
 ---
 

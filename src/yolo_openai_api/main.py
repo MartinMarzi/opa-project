@@ -1,9 +1,11 @@
 from fastapi import FastAPI
 
 from yolo_openai_api.config import get_settings
+from yolo_openai_api.errors import register_error_handlers
 
 
 app = FastAPI(title="OpenAI-compatible YOLO11 COCO Detection API")
+register_error_handlers(app)
 
 
 @app.get("/health")

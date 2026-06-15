@@ -10,6 +10,8 @@ This project provides a **selected OpenAI-compatible API subset** for image-base
 
 It is not a full OpenAI API replacement.
 
+OpenAI-shaped error responses are implemented as part of the compatibility foundation, but full OpenAI error compatibility is not claimed.
+
 Correct wording:
 
 > This service is compatible with selected OpenAI Python client usage patterns for image detection calls.
@@ -109,6 +111,8 @@ MVP response shape should include:
 - `choices[0].message.content`
 
 The message `content` should contain a JSON string representing the detection result.
+
+Error responses should also use the OpenAI-shaped `{"error": {...}}` envelope once API endpoints start failing in practice.
 
 ---
 
