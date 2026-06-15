@@ -96,6 +96,12 @@ Errors should use a stable shape:
 }
 ```
 
+Implemented now:
+
+- unknown routes return HTTP 404 with `type = "not_found_error"` and `code = "not_found"`;
+- request validation errors return HTTP 422 with `type = "invalid_request_error"` and `code = "validation_error"`;
+- reusable helper structure keeps `message`, `type`, `param`, and `code` in place for later endpoint-specific errors.
+
 Recommended error types:
 
 | Situation | HTTP | `type` | `code` |
