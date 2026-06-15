@@ -10,7 +10,7 @@ Last updated: 2026-06-15
 
 This repository is being initialized.
 
-No application code has been implemented yet.
+The initial scaffold exists and exposes a minimal health endpoint.
 
 The initial strategic decisions are:
 
@@ -27,27 +27,27 @@ The initial strategic decisions are:
 
 ## Current milestone
 
-Current milestone: **M0 — Constitution and repository setup**
+Current milestone: **M1 — Skeleton**
 
-M0 is complete when the repository contains:
+M1 is complete when the repository contains:
 
 - `AGENTS.md`
 - initial `docs/` long-term state files
-- initial project skeleton in a later PR
+- initial project skeleton
+- a minimal unauthenticated health endpoint
 
 ---
 
 ## Implemented
 
-Nothing implemented yet.
+- Python package scaffold
+- FastAPI application scaffold
+- `GET /health`
 
 ---
 
 ## Not implemented yet
 
-- Python package scaffold
-- FastAPI application
-- `/health`
 - configuration system
 - single API key authentication
 - OpenAI-shaped error responses
@@ -81,16 +81,7 @@ Nothing implemented yet.
 
 ## Next recommended work order
 
-Create the initial repository scaffold:
-
-- `pyproject.toml`
-- `src/yolo_openai_api/`
-- minimal FastAPI app
-- `/health` endpoint
-- basic pytest setup
-- README skeleton
-
-Do not add YOLO inference in the first implementation PR.
+Implement `WO-002` Config system.
 
 ---
 
